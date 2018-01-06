@@ -73,7 +73,7 @@ function(wx_set_common_target_properties target_name)
     if(DEFINED wxBUILD_CXX_STANDARD AND NOT wxBUILD_CXX_STANDARD STREQUAL COMPILER_DEFAULT)
         # TODO: implement for older CMake versions ?
         set_target_properties(${target_name} PROPERTIES CXX_STANDARD ${wxBUILD_CXX_STANDARD})
-        if(wxBUILD_CXX_STANDARD EQUAL 11 OR wxBUILD_CXX_STANDARD EQUAL 14)
+        if (wxBUILD_CXX_STANDARD EQUAL 11 OR wxBUILD_CXX_STANDARD EQUAL 14 OR wxBUILD_CXX_STANDARD EQUAL 17)
             set_target_properties(${target_name} PROPERTIES XCODE_ATTRIBUTE_CLANG_CXX_LIBRARY libc++)
             #TODO: define for other generators than Xcode
         endif()
